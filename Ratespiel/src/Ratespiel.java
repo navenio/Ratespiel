@@ -2,31 +2,46 @@ import java.util.Scanner;
 
 public class Ratespiel {
 
-    public Ratespiel () {
+    private Ratespiel () {
         System.out.println("Willkommen");
 
-        String t = input ("Erraten Sie die Zahl");
+        int tipp = 0;
 
-        int tipp = Integer.parseInt(t);
-        if (tipp==5)
-            System.out.println("Gewonnen");
-        else
-            System.out.println("Verloren");
+        while(tipp != 5) {
+
+            String t = input("Erraten Sie die Zahl");
+
+            //crashes if t is not numeric
+            tipp = Integer.parseInt(t);
+
+            if(tipp == 5) {
+                System.out.println("Gewonnen");
+
+            }
+
+            else {
+                if(tipp > 5) {
+                    System.out.println("Zu groß");
+                }
+
+                else {
+                    System.out.println("Zu klein");
+                }
+            }
+        }
 
         System.out.println("Game Over");
 
-
     }
+
 
     private String input(String ausgabe) {
         System.out.println(ausgabe);
-
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
 
     public static void main(String[] args) {
-        //Main Methode
         Ratespiel meinRatespiel = new Ratespiel();
     }
 }
