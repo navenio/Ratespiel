@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Ratespiel {
 
     private Ratespiel () {
-        System.out.println("Willkommen");
+        System.out.println("Willkommen!");
 
         int tipp = 0;
 
